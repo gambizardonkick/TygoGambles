@@ -719,26 +719,40 @@
 <script src="/js/particles.js"></script>
 <script src="/js/toast.js"></script>
 <script>
-const CURRENT_API_URL = 'https://tygo-gambles-data.vercel.app/leaderboard/csgowin/current';
-const PREVIOUS_API_URL = 'https://tygo-gambles-data.vercel.app/leaderboard/csgowin/previous';
+const CURRENT_API_URL = 'https://tygogamblesdata.onrender.com/leaderboard/csgowin/current';
+const PREVIOUS_API_URL = 'https://tygogamblesdata.onrender.com/leaderboard/csgowin/previous';
 const roobetLogo = '/assets/logo_csgowin.webp';
-const rewards = [700, 400, 300, 150, 100, 100, 100, 50, 50, 50];
+const rewards = [175, 100, 75, 37.5, 25, 25, 25, 12.5, 12.5, 12.5];
 
 function updateCountdown() {
   const el = document.getElementById("countdown");
   const now = new Date();
-  const nextMonth = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 1, 0, 0, 0));
-  const target = new Date(nextMonth.getTime() - 60000); // End of current month UTC
-  const diff = target - now;
-  if (diff <= 0) return el.textContent = "Ended";
+
+  const startDate = new Date(Date.UTC(2025, 0, 11, 0, 0, 0)); // 2025-01-11 00:00:00 UTC
+  const weekMs = 7 * 24 * 60 * 60 * 1000;
+
+  // Calculate how many weeks have passed since startDate to now UTC date midnight
+  const nowUTCDate = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+  const weeksPassed = Math.floor((nowUTCDate - startDate.getTime()) / weekMs);
+  const nextWeekStart = new Date(startDate.getTime() + (weeksPassed + 1) * weekMs);
+
+  const diff = nextWeekStart - now;
+  if (diff <= 0) {
+    el.textContent = "Ended";
+    return;
+  }
+
   const d = Math.floor(diff / (1000 * 60 * 60 * 24));
   const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
   const m = Math.floor((diff / (1000 * 60)) % 60);
   const s = Math.floor((diff / 1000) % 60);
+
   el.textContent = `${d}d ${h}h ${m}m ${s}s`;
 }
+
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
 
 async function loadLeaderboard(apiURL = CURRENT_API_URL){
   const res = await fetch(apiURL);
