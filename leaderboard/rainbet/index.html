@@ -3,12 +3,12 @@
 <html lang="en">
 
 <head>
-    <title>TygoGambles | Rainbet Leaderboard</title>
+    <title>TygoGambles | Stake Leaderboard</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Exclusive wager races on Rainbet for code TYGO!">
+    <meta name="description" content="Exclusive wager races on Stake for code TYGO!">
     <meta property="og:image"
-        content="/assets/rainbetlogo1.png">
+        content="/assets/stake.png">
     <link rel="icon" type="image/jpg" href="/assets/logo1.png">
     <link rel="stylesheet" type="text/css" href="/css/app.css">
     <link rel="stylesheet" type="text/css" href="/css/lb.css">
@@ -527,9 +527,9 @@
         <div class="left-glow"></div>
         <div class="right-glow"></div>
     </div>
-    <object type="image/png" data="/assets/left-rainbet.png" id="leftsvg" height="100%">
+    <object type="image/png" data="/assets/left-stake.png" id="leftsvg" height="100%">
     </object>
-    <object type="image/png" data="/assets/right-csgowin.png" id="rightsvg" height="100%">
+    <object type="image/png" data="/assets/right-stake.png" id="rightsvg" height="100%">
     </object>
     <header>
         <nav>
@@ -544,11 +544,8 @@
         </nav>
     </header>
     <div class="toggle-images" style="margin-top: 50px;">
-        <img class="game-image roobet-image" id="roobetImage" src="/assets/rainbet.png"
-            style="cursor: pointer;opacity: 1;" onclick="window.location.href='/leaderboard/rainbet'">
-        <div class="vertical-line"></div>
-        <img class="game-image roobet-image" id="roobetImage" src="/assets/icon_csgowin.webp"
-            style="cursor: pointer;opacity: 0.3;" onclick="window.location.href='/leaderboard/csgowin'">
+        <img class="game-image roobet-image" id="roobetImage" src="/assets/stake.png"
+            style="cursor: pointer;opacity: 1;" onclick="window.location.href='/leaderboard/stake'">
     </div>
     <br>
     <div data-v-1d580398="" data-v-e4097664="" id="appContent">
@@ -556,10 +553,10 @@
             <div data-v-1d580398="" class="row text">
                 <span data-v-1d580398="" class="title">
                     <div data-v-1d580398="" class="price-wrapper glow">
-                        $ 1,000
+                        $ 2,000
                     </div> MONTHLY CODE <span class="glow">TYGO</span> Leaderboard!
                 </span>
-                <span data-v-1d580398="" class="subtitle" style="color: #FFF;">Every <b>BET</b> on Rainbet under Code
+                <span data-v-1d580398="" class="subtitle" style="color: #FFF;">Every <b>BET</b> on Stake under Code
                     <b>TYGO</b>
                     counts towards your score. <br>
                     <i>The leaderboard updates every 15 minutes.</i><br>
@@ -721,8 +718,8 @@
 <script>
 const CURRENT_API_URL = 'https://tygogamblesdata.onrender.com/leaderboard/rainbet/current';
 const PREVIOUS_API_URL = 'https://tygogamblesdata.onrender.com/leaderboard/rainbet/previous';
-const roobetLogo = '/assets/rainbetlogo.png';
-const rewards = [350, 200, 150, 75, 50, 50, 50, 25, 25, 25];
+const roobetLogo = '/assets/stakelogo.png';
+const rewards = [1000, 500, 250, 150, 100, 50, 30, 20, 0, 0];
 
 function updateCountdown() {
   const el = document.getElementById("countdown");
