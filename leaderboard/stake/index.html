@@ -575,22 +575,6 @@
                             </svg>
                             RULES
                         </button>
-<button id="prevLeaderboardBtn" class="prev-lb-btn" style="margin-left: 12px;">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l2 2h5a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2z"></path>
-    </svg>
-    PREVIOUS LEADERBOARD
-</button>
-
-<button id="currentLeaderboardBtn" class="prev-lb-btn"
-    style="margin-left: 12px; display: none; background: #22c55e;">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3 12h18M3 6h18M3 18h18"></path>
-    </svg>
-    CURRENT LEADERBOARD
-</button>
                     </div>
                 </span>
 <div class="css-esk2ah">
@@ -716,7 +700,7 @@
 <script src="/js/particles.js"></script>
 <script src="/js/toast.js"></script>
 <script>
-const CURRENT_API_URL = 'https://tygogamblesdata-rivf.onrender.com';
+const CURRENT_API_URL = 'https://tygogamblesdata-rivf.onrender.com/leaderboard/sheets';
 const PREVIOUS_API_URL = 'https://tygogamblesdata.onrender.com/leaderboard/rainbet/previous';
 const roobetLogo = '/assets/stakelogo.png';
 const rewards = [1000, 500, 250, 150, 100, 50, 30, 20, 0, 0];
